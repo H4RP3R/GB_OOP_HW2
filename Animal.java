@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * Animal
  */
-public class Animal {
+public abstract class Animal {
     protected String id;
     protected String name;
     protected LocalDate birthDate;
