@@ -11,7 +11,7 @@ public class Dog extends Animal implements Goable {
     }
 
     public Dog(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

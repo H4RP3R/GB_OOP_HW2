@@ -15,7 +15,7 @@ public class Duck extends Animal implements Goable, Flyable, Swimable {
     }
 
     public Duck(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

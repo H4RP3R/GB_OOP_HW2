@@ -13,7 +13,7 @@ public class Parrot extends Animal implements Flyable, Goable {
     }
 
     public Parrot(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

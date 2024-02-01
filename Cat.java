@@ -11,7 +11,7 @@ public class Cat extends Animal implements Goable {
     }
 
     public Cat(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

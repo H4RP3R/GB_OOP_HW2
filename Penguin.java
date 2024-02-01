@@ -13,7 +13,7 @@ public class Penguin extends Animal implements Swimable, Goable {
     }
 
     public Penguin(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

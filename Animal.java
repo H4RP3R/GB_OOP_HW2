@@ -7,15 +7,17 @@ public class Animal {
     protected String name;
     protected LocalDate birthDate;
     protected Illness illness;
+    protected boolean isVaccinated;
 
-    public Animal(String name, LocalDate birthDate, Illness illness) {
+    public Animal(String name, LocalDate birthDate, Illness illness, boolean isVaccinated) {
         this.name = name;
         this.birthDate = birthDate;
         this.illness = illness;
+        this.isVaccinated = isVaccinated;
     }
 
     public Animal() {
-        this("Default Name", LocalDate.now(), new Illness());
+        this("Default Name", LocalDate.now(), new Illness(), false);
     }
 
     public String getName() {
@@ -32,6 +34,14 @@ public class Animal {
 
     public String getType() {
         return getClass().getSimpleName();
+    }
+
+    public boolean getIsVaccinated() {
+        return isVaccinated;
+    }
+
+    public void setIsVaccinated(boolean isVaccinated) {
+        this.isVaccinated = isVaccinated;
     }
 
     public void setIllness(Illness illness) {

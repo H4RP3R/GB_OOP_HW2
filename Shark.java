@@ -11,7 +11,7 @@ public class Shark extends Animal implements Swimable {
     }
 
     public Shark(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override

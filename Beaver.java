@@ -13,7 +13,7 @@ public class Beaver extends Animal implements Goable, Swimable {
     }
 
     public Beaver(String name, LocalDate birthDate, Illness illness) {
-        super(name, birthDate, illness);
+        super(name, birthDate, illness, false);
     }
 
     @Override
