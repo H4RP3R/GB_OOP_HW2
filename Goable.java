@@ -4,7 +4,7 @@
 public interface Goable {
     double getWalkSpeed();
 
-    default double go() {
+    default double run() {
         return getWalkSpeed();
     }
 }

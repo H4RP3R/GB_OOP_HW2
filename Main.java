@@ -7,21 +7,21 @@ public class Main {
 
     public static void main(String[] args) {
         Cat cat = new Cat("Barsik", LocalDate.of(2017, 05, 01), new Illness("Lichen"));
-        System.out.println(cat.go());
+        System.out.println(cat.run());
         System.out.println();
 
         Duck duck = new Duck("Donald", LocalDate.of(2021, 05, 06), new Illness());
-        System.out.println(duck.go());
+        System.out.println(duck.run());
         System.out.println(duck.fly());
         System.out.println(duck.swim());
         System.out.println();
 
         Dog dog = new Dog("Sharik", LocalDate.of(2019, 10, 24), new Illness("Distemper"));
-        System.out.println(dog.go());
+        System.out.println(dog.run());
         System.out.println();
 
         Penguin penguin = new Penguin("Lolo", LocalDate.of(2018, 01, 01), new Illness());
-        System.out.println(penguin.go());
+        System.out.println(penguin.run());
         System.out.println(penguin.swim());
         System.out.println();
 
@@ -30,8 +30,13 @@ public class Main {
         System.out.println();
 
         Beaver beaver = new Beaver("Justin", LocalDate.of(2015, 02, 07), new Illness());
-        System.out.println(beaver.go());
+        System.out.println(beaver.run());
         System.out.println(beaver.swim());
+        System.out.println();
+
+        Parrot parrot = new Parrot("Iago", LocalDate.of(2011, 06, 11), new Illness());
+        System.out.println(parrot.run());
+        System.out.println(parrot.fly());
         System.out.println();
     }
 }
