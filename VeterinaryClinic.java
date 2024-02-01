@@ -6,8 +6,13 @@ import java.util.Set;
  * VeterinaryClinic
  */
 public class VeterinaryClinic {
-    private Set<ClinicStaff> staff = new HashSet<>();
-    private Set<Animal> patients = new HashSet<>();
+    private Set<ClinicStaff> staff;
+    private Set<Animal> patients;
+
+    public VeterinaryClinic() {
+        staff = new HashSet<>();
+        patients = new HashSet<>();
+    }
 
     public void addStaff(ClinicStaff... cs) {
         staff.addAll(List.of(cs));
