@@ -6,54 +6,58 @@ import java.time.LocalDate;
 public class Main {
 
     public static void main(String[] args) {
-        // Cat cat = new Cat("Barsik", LocalDate.of(2017, 05, 01), new
-        // Illness("Lichen"));
-        // System.out.println(cat.run());
-        // System.out.println();
+        Cat cat = new Cat("Barsik", LocalDate.of(2017, 05, 01), new Illness("Lichen"));
+        Duck duck = new Duck("Donald", LocalDate.of(2021, 05, 06), new Illness());
+        Dog dog = new Dog("Sharik", LocalDate.of(2019, 10, 24), new Illness("Distemper"));
+        Penguin penguin = new Penguin("Lolo", LocalDate.of(2018, 01, 01), new Illness());
+        Shark shark = new Shark("Sharp", LocalDate.of(2012, 11, 20), new Illness());
+        Beaver beaver = new Beaver("Justin", LocalDate.of(2015, 02, 07), new Illness());
+        Parrot parrot = new Parrot("Iago", LocalDate.of(2011, 06, 11), new Illness());
 
-        // Duck duck = new Duck("Donald", LocalDate.of(2021, 05, 06), new Illness());
-        // System.out.println(duck.run());
-        // System.out.println(duck.fly());
-        // System.out.println(duck.swim());
-        // System.out.println();
+        Doctor doctor1 = new Doctor("John", "Smith", 4000);
+        Nurse nurse1 = new Nurse("Anna", "Williams", 3200);
+        Doctor doctor2 = new Doctor("Ivan", "Popov", 5000, nurse1);
+        Nurse nurse2 = new Nurse("Kristina", "Johnson", 3450);
 
-        // Dog dog = new Dog("Sharik", LocalDate.of(2019, 10, 24), new
-        // Illness("Distemper"));
-        // System.out.println(dog.run());
-        // System.out.println();
+        VeterinaryClinic clinic = new VeterinaryClinic();
+        clinic.addStaff(doctor1);
+        clinic.addStaff(doctor2);
+        clinic.addStaff(nurse1, nurse2);
+        clinic.addPatients(cat, duck, dog, penguin, shark, beaver, parrot);
 
-        // Penguin penguin = new Penguin("Lolo", LocalDate.of(2018, 01, 01), new
-        // Illness());
-        // System.out.println(penguin.run());
-        // System.out.println(penguin.swim());
-        // System.out.println();
+        System.out.println("Goable");
+        for (Goable g : clinic.getGoables()) {
+            System.out.println(g);
+        }
+        System.out.println();
 
-        // Shark shark = new Shark("Sharp", LocalDate.of(2012, 11, 20), new Illness());
-        // System.out.println(shark.swim());
-        // System.out.println();
+        System.out.println("Swimable");
+        for (Swimable s : clinic.getSwimables()) {
+            System.out.println(s);
+        }
+        System.out.println();
 
-        // Beaver beaver = new Beaver("Justin", LocalDate.of(2015, 02, 07), new
-        // Illness());
-        // System.out.println(beaver.run());
-        // System.out.println(beaver.swim());
-        // System.out.println();
+        System.out.println("Flyable");
+        for (Flyable f : clinic.getFlyables()) {
+            System.out.println(f);
+        }
+        System.out.println();
 
-        // Parrot parrot = new Parrot("Iago", LocalDate.of(2011, 06, 11), new
-        // Illness());
-        // System.out.println(parrot.run());
-        // System.out.println(parrot.fly());
-        // System.out.println();
+        System.out.println("Doctors");
+        for (Doctor d : clinic.getDoctors()) {
+            System.out.println(d);
+        }
+        System.out.println();
 
-        Doctor doctor1 = new Doctor(123421, "John", "Smith", 4000);
-        System.out.println(doctor1);
+        System.out.println("Nurses");
+        for (Nurse n : clinic.getNurses()) {
+            System.out.println(n);
+        }
+        System.out.println();
 
-        Nurse nurse1 = new Nurse(230451, "Anna", "Williams", 3200);
-        System.out.println(nurse1);
-
-        Doctor doctor2 = new Doctor(163424, "Ivan", "Popov", 5000, nurse1);
-        System.out.println(doctor2);
-
-        Nurse nurse2 = new Nurse(173914, "Kristina", "Johnson", 3450);
-        System.out.println(nurse2);
+        doctor2.diagnose(penguin, "Lichen");
+        doctor2.getNurse().vaccinate(penguin);
+        System.out.println(penguin.getIllness());
+        System.out.println(penguin.getIsVaccinated());
     }
 }

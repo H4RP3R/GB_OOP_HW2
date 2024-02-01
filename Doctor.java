@@ -4,12 +4,12 @@
 public class Doctor extends ClinicStaff {
     private Nurse nurse;
 
-    public Doctor(long id, String firstName, String lastName, double salary) {
-        super(id, firstName, lastName, salary);
+    public Doctor(String firstName, String lastName, double salary) {
+        super(firstName, lastName, salary);
     }
 
-    public Doctor(long id, String firstName, String lastName, double salary, Nurse nurse) {
-        this(id, firstName, lastName, salary);
+    public Doctor(String firstName, String lastName, double salary, Nurse nurse) {
+        this(firstName, lastName, salary);
         this.nurse = nurse;
     }
 

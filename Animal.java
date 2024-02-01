@@ -1,15 +1,19 @@
 import java.time.LocalDate;
+import java.util.Objects;
+import java.util.UUID;
 
 /**
  * Animal
  */
 public class Animal {
+    protected String id;
     protected String name;
     protected LocalDate birthDate;
     protected Illness illness;
     protected boolean isVaccinated;
 
     public Animal(String name, LocalDate birthDate, Illness illness, boolean isVaccinated) {
+        id = UUID.randomUUID().toString();
         this.name = name;
         this.birthDate = birthDate;
         this.illness = illness;
@@ -18,6 +22,10 @@ public class Animal {
 
     public Animal() {
         this("Default Name", LocalDate.now(), new Illness(), false);
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -68,27 +76,34 @@ public class Animal {
         System.out.println(getType() + " is sleeping...");
     }
 
-    // public void lifeCycle() {
-    // wakeUp("07:00");
-    // hunt();
-    // eat();
-    // sleep();
-    // }
-
-    // public void go() {
-    // System.out.println(getType() + " is walking...");
-    // }
-
-    // public void fly() {
-    // System.out.println(getType() + " is flying...");
-    // }
-
-    // public void swim() {
-    // System.out.println(getType() + " is swimming...");
-    // }
+    public void lifeCycle() {
+        wakeUp("07:00");
+        hunt();
+        eat();
+        sleep();
+    }
 
     @Override
     public String toString() {
         return String.format("Type: %s\tName: %s\tBirth date: %s\tIllness: %s", getType(), name, birthDate, illness);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Animal a = (Animal) obj;
+        return id.equals(a.getId()) && name.equals(a.getName()) && birthDate.equals(a.getBirthDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, birthDate);
     }
 }
