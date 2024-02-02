@@ -4,7 +4,7 @@ import java.util.UUID;
 /**
  * ClinicStaff
  */
-public class ClinicStaff {
+public abstract class ClinicStaff {
     protected String id;
     protected String firstName;
     protected String lastName;
@@ -35,8 +35,7 @@ public class ClinicStaff {
 
     @Override
     public String toString() {
-        return String.format("ID: %.6s... \t%s %s %s \t %1.2f$", id, this.getClass().getSimpleName(), firstName,
-                lastName,
+        return String.format("ID: %.6s... \t%s %s %s \t %1.2f$", id, getClass().getSimpleName(), firstName, lastName,
                 salary);
     }
 
